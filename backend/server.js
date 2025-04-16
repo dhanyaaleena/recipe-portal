@@ -23,9 +23,11 @@ app.use(cors({
 // Initialize Passport and session support
 app.use(passport.initialize());
 
-// Routes
-app.use('/api/recipes', recipeRoutes);
-app.use('/api/auth', authRoutes);
+const BASE_PATH = process.env.BASE_PATH || ''; // e.g., "/recipe-portal"
+
+app.use(`${BASE_PATH}/api/recipes`, recipeRoutes);
+app.use(`${BASE_PATH}/api/auth`, authRoutes);
+
 
 const startServer = async () => {
   try {

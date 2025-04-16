@@ -73,7 +73,7 @@ function App() {
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/food_img.avif"
+            src={`${process.env.PUBLIC_URL}/food_img.avif`}
             alt="Kitchen background"
             className="w-full h-full object-cover opacity-70"
           />
@@ -96,7 +96,7 @@ function App() {
     {/* Background Image Layer */}
     <div className="fixed inset-0 z-0">
       <img
-        src="/food_img.avif" 
+        src={`${process.env.PUBLIC_URL}/food_img.avif`}
         alt="Kitchen background"
         className="w-full h-full object-cover opacity-70"
       />
