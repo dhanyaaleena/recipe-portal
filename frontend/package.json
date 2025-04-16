@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.sagestack.org/recipe-portal",
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@react-oauth/google": "^0.12.1",
