@@ -69,7 +69,7 @@ function App() {
 
   if (!isLoggedIn) {
     return (
-      <div className="fixed min-h-screen flex flex-col">
+      <div className="relative min-h-screen flex flex-col">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <img
