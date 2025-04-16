@@ -112,25 +112,25 @@ const RecipeSearch = () => {
 
   return (
     <div className="space-y-6">
-      <div className="form-control relative">
-        <div className="join w-full">
-          <input
-            type="text"
-            className="input input-bordered join-item w-full bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search for recipes..."
-            aria-label="Recipe search"
-          />
-          <button className="btn btn-primary join-item bg-primary hover:bg-primary/90 text-white transition-all">
-            {isLoading ? (
-              <FiLoader className="animate-spin text-xl" />
-            ) : (
-              <FiSearch className="text-xl" />
-            )}
-          </button>
-        </div>
-      </div>
+  <div className="form-control relative">
+    <div className="join w-full">
+      <input
+        type="text"
+        className="input input-bordered join-item w-full bg-white text-gray-800 placeholder-gray-400 placeholder:text-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search for recipes..."
+        aria-label="Recipe search"
+      />
+      <button className="btn join-item bg-white hover:bg-gray-100 text-black border border-gray-300 transition-all">
+        {isLoading ? (
+          <FiLoader className="animate-spin text-xl text-black" />
+        ) : (
+          <FiSearch className="text-xl text-black" />
+        )}
+      </button>
+    </div>
+  </div>
 
       {error && (
   <p className="bg-red-100 text-red-800 p-3 rounded-md border border-red-300 shadow-sm">

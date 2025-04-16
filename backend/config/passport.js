@@ -3,10 +3,11 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User'); // Assuming you have a User model
 require('dotenv').config();
 const passport = require('passport');
+
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: 'https://1ac9-2405-201-f000-7015-b98f-f9a1-34ce-4ee.ngrok-free.app/api/auth/google/callback',
+    callbackURL: process.env.GOOGLE_CALLBACK_URL,
   },
   async function(accessToken, refreshToken, profile, done) {
     console.log('Google profile received:', profile); // Log the received profile

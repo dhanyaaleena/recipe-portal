@@ -6,7 +6,6 @@ const cors = require('cors');
 const recipeRoutes = require('./routes/recipes');
 const authRoutes = require('./routes/auth');
 const passport = require('passport');
-const session = require('express-session');
 
 dotenv.config();
 
@@ -15,24 +14,14 @@ const app = express();
 // Configure CORS without credentials
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.CLIENT_URL,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true // Disable credentials
 }));
 
-// Configure session middleware
-// app.use(session({
-//   secret: process.env.SESSION_SECRET,
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { secure: false }  // Use secure: false for HTTP in development
-// }));
-
-
 // Initialize Passport and session support
 app.use(passport.initialize());
-// app.use(passport.session());
 
 // Routes
 app.use('/api/recipes', recipeRoutes);
