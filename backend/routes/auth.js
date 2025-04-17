@@ -19,7 +19,7 @@ router.get('/google/callback',
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
 
     // You can send token as query param, or set it as cookie
-    res.redirect(`${process.env.CLIENT_URL}/?token=${token}`);
+    res.redirect(`${process.env.CLIENT_URL}/dashboard?token=${token}`);
 
   }
 );
