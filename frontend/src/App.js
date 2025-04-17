@@ -3,10 +3,11 @@ import Login from './components/Login';
 import RecipeSearch from './components/RecipeSearch';
 
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
-  const API_URL = process.env.REACT_APP_API_URL;
 
   // Store token from URL on first load (after OAuth redirect)
   useEffect(() => {
